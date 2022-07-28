@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital@1&display=swap');
+
+html {
+    font-family: 'Gentium Plus', serif;
+}
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #e4a7db, #d245db, #a22dce, #7d3ac5, #4d56bd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+.calculator {
+    height: 60vh;
+    min-width: 370px;
+    max-width: 370px;
+}
+
+.display {
+    width: 100%;
+    min-height: 20%;
+    max-height: min-content;
+    background-color: rgba(29,27,26,0.151);
+    box-shadow: -11px -5px 38px -8px rgba(76, 17, 122, 1);
+    border-radius: 6%;
+    color: white;
+    word-break: break-all;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.currentNumber {
+    font-size: 30px;
+}
+
+.previousNumber {
+    color: darkgrey;
+    font-size: 25px;
+}
+
+.mathSign {
+    font-size: 26px;
+}
+
+.panel {
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 3px;
+    box-shadow: -11px -5px 38px -8px rgba(76, 17, 122, 1);
+    
+}
+
+.panel button {
+    font-size: 25px;
+    background-color: rgba(0,0,0,0.466);
+    color:white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all .2 ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(0,0,0,0.546);
+    
+}
+
+.equals {
+    grid-row: -3/-1;
+    grid-column: -2/-1;;
+}
+
+.calculator-history {
+    height: 60vh;
+    width: 150px;
+    margin: 5px 0 0 5px;
+    background-color: rgba(20,29,29,0.123);
+    border-radius: 5px;
+    color:white;
+    padding: 5px 12px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: -11px -5px 38px -8px rgba(76, 17, 122, 1);
+}
+
+.history {
+    list-style: none;
+}
+
+.history-title {
+    padding-bottom: 10px;
+    
+}
+
+.history-btn {
+    border-radius: 15px;
+    background-color: rgba(20,29,29,0.345);
+    color: white;
+    border: none;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 5px;
+    outline: none;
+    display: none;
+    margin: 8px auto;
+}
+
+.history-btn.active {
+    display: block;
+}
+
+.history-item {
+    margin: 8px 0;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(20,29,29,0.345);
+    padding-bottom: 4px;
+
+}
